@@ -1,7 +1,7 @@
 lib: obj
-	gcc -shared -o lib/liblog.so src/log_it.o
-	rm src/log_it.o
+	gcc -shared -o lib/liblogit.so src/logit.o
+	rm src/logit.o
 
 obj:
-	gcc -c -Wall -Werror -fPIC src/log_it.c -o src/log_it.o
+	gcc -c -Wall -Werror -fPIC src/logit.c -o src/logit.o
 	

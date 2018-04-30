@@ -1,5 +1,5 @@
-#ifndef LOG_IT_H
-#define LOG_IT_H
+#ifndef LOGIT_H
+#define LOGIT_H
 
 #include <errno.h>
 
@@ -11,4 +11,4 @@ extern void _log_msg(char *filename, int line, char *fmt, ...);
 extern void _log_msg_r(char *filename, int line, char *fmt, ...);
 extern void _err_msg(char *filename, int line, int errnum, char *sysc);
 
-#endif /* LOG_IT_H */
+#endif /* LOGIT_H */
