@@ -1,5 +1,5 @@
 lib: obj
-	gcc -shared -o lib/liblogit.so src/logit.o
+	ar rcs lib/liblogit.a src/logit.o
 	rm src/logit.o
 
 obj:
