@@ -1,10 +1,15 @@
-#logit -- C logging library
+# logit -- C logging library
 
-##Usage
+## Usage
 
 ```
 git clone https://github.com/gidovw/logit
-make
+make          # This will create the static library
+make install  # This will create the library and cp it in /usr/lib
 ```
 
-Include the `logit.h` header file in the source code and link against the `liblogit.so` shared object.
+Include the `inc/logit.h` header file in the source code and link against the `liblogit.a` object.
+
+```
+gcc [...] -l:liblogit.a
+``` 
