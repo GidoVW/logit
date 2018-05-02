@@ -5,6 +5,13 @@
 #include <stdlib.h>
 #include <errno.h>
 
+const char *version = "1.0.0";
+
+char *logit_version()
+{
+  return (char *)version;
+}
+
 void _err_msg(char *filename, int line, int errnum, char *sysc)
 {
   fprintf(stderr, "%s:%d: %s: %s\n", filename, line, sysc, strerror(errnum));
