@@ -4,4 +4,6 @@ lib: obj
 
 obj:
 	gcc -c -Wall -Werror -fPIC src/logit.c -o src/logit.o
-	
+
+install: lib
+	cp lib/liblogit.a /usr/lib/	
