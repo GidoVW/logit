@@ -5,16 +5,21 @@
 #include <stdlib.h>
 #include <errno.h>
 
-const char *version = "1.0.0";
+const char *version = "1.0.1";
 
 char *logit_version()
 {
   return (char *)version;
 }
 
-void _err_msg(char *filename, int line, int errnum, char *sysc)
+void _err_msg(char *filename, int line, int errnum, char *fmt, ...)
 {
-  fprintf(stderr, "%s:%d: %s: %s\n", filename, line, sysc, strerror(errnum));
+  va_list vargs;
+  fprintf(stderr, "%s:%d: ", filename, line);
+  va_start(vargs, fmt);
+  vfprintf(stderr, fmt, vargs);
+  va_end(vargs);
+  fprintf(stderr, ": %s\n", strerror(errnum)); /* errno and flush */
 }
 
 void _log_msg(char *filename, int line, char *fmt, ...)
